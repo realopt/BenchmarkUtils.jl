@@ -15,59 +15,6 @@ function generateCombinations(optionslist, ret, depth , current)
     end
 end
 
-# using Plots.(deprecated)
-# function plotMetric(dpoints, metric_name, folder)
-# # dpoints is a 2D np array (for a specific metric). each line has cat, conds, value
-#
-#     # init Plots backend.
-#     pyplot()
-#
-#     # the space between each set of bars
-#     space = 0.3
-#
-#     categories = convert(Array{String,1}, unique(dpoints[:,1]) )
-#     conditions = convert(Array{String,1}, unique(dpoints[:,2]) )
-#
-#     # @show categories
-#     # @show conditions
-#
-#     n = length(conditions)
-#     nCategories = length(categories)
-#
-#     # the width of each single bar. (1-space) is the width taken by all bars of one category
-#     width = (1 - space) / (length(conditions))
-#
-#     indeces = collect(1:length(categories))
-#
-#     #show(false) # doesn t work I dont know why
-#
-#     max_y = 0.0
-#     for (i,cond) in enumerate(conditions)
-#         # @show cond
-#         vals = Array{Float64,1}()
-#         for k in 1:size(dpoints, 1)
-#             dpoints[k,2] == cond && push!(vals, dpoints[k,3])
-#         end
-#         # @show vals
-#
-#         pos = [(j - (1 - space) / 2.0 + (i-0.5) * width) for j in indeces]
-#         # @show pos
-#
-#         bar!(pos, vals, label=cond, bar_width=width, reuse=(i==1?false:true) )
-#         max_y = max(max_y , maximum(vals))
-#     end
-#
-#     # @show nCategories+1.1
-#     #xlabel!("Plot Title")
-#     xlims!(1-1.1,nCategories+1.1),
-#     xticks!(indeces, categories)
-#
-#     ylabel!(metric_name)
-#     ylims!(0,max_y*1.6)
-#
-#     savefig(string(folder,metric_name,".pdf") )
-# end
-
 function gen_colors(n)
   cs = distinguishable_colors(n,
       [colorant"#FE4365", colorant"#eca25c"], # seed colors

@@ -12,10 +12,10 @@ function test_func_example(cat, s, p)
     end
 end
 
-categories = [:A, :B]
-params = [:s, :p]
-params_values = Dict(:s => [1,2], :p => [3,4])
-metrics = [:SumMetic, :ProdMetric]
+categories = ["A", "B"]
+params = ["s", "p"]
+params_values = Dict("s" => [1,2], "p" => [3,4])
+metrics = ["SumMetic", "ProdMetric"]
 folder = "/Users/itahiri/GIT_REP/"
 
 run_test_compaign(categories, params, params_values, test_func_example, metrics, folder)
