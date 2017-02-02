@@ -1,24 +1,23 @@
-#using BenchmarkUtils
+using BenchmarkUtils
 
-#using Plots
+#include("../src/BenchmarkUtils.jl")
 
-include("../src/BenchmarkUtils.jl")
-
-function test_func_example(cat, s, p)
+function test_func_example(cat, offset, s, p)
     if cat == :A
-        return s + p , s * p
+        return s + p + offset, s * p + offset
     else
-        return 2 + s + p , 2 * s * p
+        return 2 + s + p + offset, 2 * s * p + offset
     end
 end
 
-categories = ["A", "B"]
-params = ["s", "p"]
-params_values = Dict("s" => [1,2], "p" => [3,4])
-metrics = ["SumMetic", "ProdMetric"]
-folder = "/Users/itahiri/GIT_REP/"
+categories = [:A, :B]
+fixedparams = [+10]
+varparams = [:s, :p]
+varparams_values = Dict(:s => [1,2], :p => [3,4])
+metrics = [:SumMetic, :ProdMetric]
+folder = "/home/itahiri/tests/"
 
-run_test_compaign(categories, params, params_values, test_func_example, metrics, folder)
+run_test_compaign(categories, fixedparams, varparams, varparams_values, test_func_example, metrics, folder)
 
 # y=[3, 7, 5, 1]
 # x=[1, 2, 3, 4]
@@ -65,9 +64,3 @@ run_test_compaign(categories, params, params_values, test_func_example, metrics,
 # # define a plot
 # # myplot = plot(..)
 # # draw(PDF("myplot.pdf", 4inch, 3inch), myplot)
-
-
-
-
-
-

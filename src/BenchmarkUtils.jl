@@ -54,6 +54,9 @@ function plotMetric(dpoints, metric_name, folder)
         pos = [(j - (1 - space) / 2.0 + (i-0.5) * width) for j in indeces]
         # @show pos
 
+        # @show pos .- (width/2.0)
+        # @show pos .+ (width/2.0)
+
         if i == 1
             p = plot(xmin=pos .- (width/2.0), xmax=pos .+ (width/2.0), y=vals, Geom.bar,
                     Theme(default_color=cond_colors[i]) )
@@ -76,7 +79,7 @@ function plotMetric(dpoints, metric_name, folder)
 end
 
 
-function run_test_compaign(categories, params, params_values, test_func, metrics, folder)
+function run_test_compaign(categories, fixedparams, params, params_values, test_func, metrics, folder)
 
     params_values_list = []
     for p in params
@@ -97,7 +100,7 @@ function run_test_compaign(categories, params, params_values, test_func, metrics
                     cond *= "-"
                 end
             end
-            result = test_func(cat, comb...)
+            result = test_func(cat, fixedparams..., comb...)
             for (i, met_val) in enumerate(result)
                 # @show i
                 push!(dpoints_array[i], [string(cat) cond met_val])
@@ -118,5 +121,3 @@ end
 
 
 end # module
-
-
