@@ -79,7 +79,8 @@ function plotMetric(dpoints, metric_name, folder)
 end
 
 
-function run_test_compaign(categories, fixedparams, params, params_values, test_func, metrics, folder)
+function run_test_compaign(categories, fixedparams, params, params_values, test_func, metrics, folder;
+        plot = true)
 
     params_values_list = []
     for p in params
@@ -110,13 +111,17 @@ function run_test_compaign(categories, fixedparams, params, params_values, test_
     end
     # @show dpoints_array
 
+    ret = Dict()
     for (i, met_dpoints) in enumerate(dpoints_array)
         # @show met_dpoints
         met_dpoints_2D = vcat(met_dpoints...)
         metric_name = string(metrics[i])
         @show (met_dpoints_2D, metric_name)
+        Dict[metric_name] = met_dpoints_2D
         plotMetric(met_dpoints_2D, metric_name, folder)
     end
+    
+    return ret
 end
 
 
