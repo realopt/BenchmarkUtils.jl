@@ -10,7 +10,7 @@ notifications:
 # uncomment the following lines to override the default test script
 script:
   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-  - julia -e 'Pkg.clone(pwd()); Pkg.build("Scanner"); Pkg.test("Scanner"; coverage=true)'
+  - julia -e 'Pkg.clone(pwd()); Pkg.build("BenchmarkUtils"); Pkg.test("BenchmarkUtils"; coverage=true)'
 
 after_success:
-  - julia -e 'cd(Pkg.dir("Scanner")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
+  - julia -e 'cd(Pkg.dir("BenchmarkUtils")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
