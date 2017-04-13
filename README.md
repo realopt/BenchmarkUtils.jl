@@ -2,6 +2,9 @@
 
 Tools to ease the setup of numerical experiments to benchmark algorithmic feature performances. The test automation permits to quickly calibrate the parameters of an arbitrary algorithm control function.
 
+[![Build Status](https://travis-ci.org/realopt/BenchmarkUtils.jl.svg?branch=master)](https://travis-ci.org/realopt/BenchmarkUtils.jl)
+[![codecov](https://codecov.io/gh/realopt/BenchmarkUtils.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/realopt/BenchmarkUtils.jl)
+
 # Installation
 
 To install please run the following command on Julia terminal
