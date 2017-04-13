@@ -7,7 +7,7 @@ Tools to ease the setup of numerical experiments to benchmark algorithmic featur
 To install please run the following command on Julia terminal
 
 ```
-Pkg.clone("git@github.com/realopt/BenchmarkUtils.jl.git")
+Pkg.clone("git@github.com:realopt/BenchmarkUtils.jl.git")
 ```
 
 # Usage example
