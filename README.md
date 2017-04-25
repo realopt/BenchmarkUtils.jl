@@ -1,5 +1,7 @@
 # BenchmarkUtils
 
+[![Join the chat at https://gitter.im/realopt/BenchmarkUtils.jl](https://badges.gitter.im/realopt/BenchmarkUtils.jl.svg)](https://gitter.im/realopt/BenchmarkUtils.jl?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Tools to ease the setup of numerical experiments to benchmark algorithmic feature performances. The test automation permits to quickly calibrate the parameters of an arbitrary algorithm control function.
 
 [![Build Status](https://travis-ci.org/realopt/BenchmarkUtils.jl.svg?branch=master)](https://travis-ci.org/realopt/BenchmarkUtils.jl)
