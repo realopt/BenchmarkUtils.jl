@@ -4,6 +4,7 @@ Tools to ease the setup of numerical experiments to benchmark algorithmic featur
 
 [![Build Status](https://travis-ci.org/realopt/BenchmarkUtils.jl.svg?branch=master)](https://travis-ci.org/realopt/BenchmarkUtils.jl)
 [![codecov](https://codecov.io/gh/realopt/BenchmarkUtils.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/realopt/BenchmarkUtils.jl)
+[![Join the chat at https://gitter.im/realopt/BenchmarkUtils.jl](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/realopt/BenchmarkUtils.jl)
 
 # Installation
 
